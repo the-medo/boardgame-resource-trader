@@ -16,11 +16,47 @@ html {
 
 body {
   margin: 0;
-  background: rgb(17, 24, 39) url('https://imagedelivery.net/zchNIWFramhipgMjPiGPQQ/794cc051-844d-4c64-fe4e-6e5367e38000/original') no-repeat center top fixed;
+  background: rgb(17, 24, 39) url('/src/assets/near-and-far.jpg') no-repeat center top fixed;
+  background-size: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, input.fancy-text {
   font-family: 'Bungee Inline', serif;
+  color: #304534;
+}
+
+/* Container you want to have a custom scrollbar */
+div::-webkit-scrollbar {
+  width: 0.5rem;   /* Width of the scrollbar */
+  height: 0.5rem;  /* Height of the horizontal scrollbar */
+}
+
+/* Track of the scrollbar - you can leave this transparent */
+div::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* The draggable part of scrollbar - this is the part you drag */
+div::-webkit-scrollbar-thumb {
+  background: rgba(68, 68, 68, 0.6);
+  border-radius: 0.5rem;
+}
+
+/* Styles for the thumb when it is being hovered */
+div::-webkit-scrollbar-thumb:hover {
+  background: #494949;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 @layer components {
@@ -56,9 +92,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.popup {
-  backface-visibility: hidden;
-}
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
@@ -96,38 +129,6 @@ h1, h2, h3, h4, h5, h6 {
   -ms-animation: rotating 2s linear infinite;
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  margin: 4px;
-  border: 4px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
 }
 
 @keyframes lds-ring {
