@@ -6,7 +6,7 @@ const ResourceCounters: Component = () => {
   const { store } = useStore();
 
   return (
-    <div class="flex gap-1 justify-between">
+    <div class="flex gap-3 items-center justify-center">
       <For each={store.resourceList}>{(resource) => <ResourceCounter resource={resource} />}</For>
     </div>
   );

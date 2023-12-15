@@ -1,8 +1,8 @@
-import { ParentComponent } from 'solid-js';
+import { Component } from 'solid-js';
 
-const Header: ParentComponent = ({ children }) => {
+const Header: Component = () => {
   return (
-      <h1 class="text-center text-8xl">Resource trader</h1>
+    <h1 class="text-center pt-4 text-4xl sm:text-4xl md:text-6xl lg:text-8xl">Resource trader</h1>
   );
 };
 

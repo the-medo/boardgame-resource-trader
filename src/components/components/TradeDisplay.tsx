@@ -1,9 +1,10 @@
 import { Component, For } from 'solid-js';
-import { ResourceArray, TradeDefinition } from '../../utils/types';
+import { TradeDefinition } from '../../utils/types';
 import { useStore } from '../../utils/store';
 
 interface TradeDisplayProps {
   definition: TradeDefinition;
+  index: number;
 }
 
 const TradeDisplay: Component<TradeDisplayProps> = (props) => {
@@ -25,7 +26,9 @@ const TradeDisplay: Component<TradeDisplayProps> = (props) => {
           <h1 class="text-3xl">{props.definition.value}</h1>
         </div>
         <div class="flex-row gap-1 w-1/4">
-          <h1 class="text-2xl">{props.definition.value}x</h1>
+          <h1 class="text-2xl">
+            <For each={Array(store.tradeResults[props.index] ?? 0).fill(null)}>{() => '.'}</For>
+          </h1>
         </div>
       </div>
     </>

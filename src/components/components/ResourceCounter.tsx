@@ -34,6 +34,7 @@ const ResourceCounter: Component<ResourceCounterProps> = (props) => {
       <input
         onInput={handleInput}
         type="number"
+        max={20}
         name={props.resource.id}
         id="count"
         value={store.yourResources[curValueIndex]}

@@ -8,7 +8,7 @@ const TradeDisplayPanel: Component = () => {
   return (
     <div class="flex flex-col gap-1">
       <For each={store.tradeDefinitions}>
-        {(definition) => <TradeDisplay definition={definition} />}
+        {(definition, index) => <TradeDisplay definition={definition} index={index()} />}
       </For>
     </div>
   );

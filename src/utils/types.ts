@@ -12,3 +12,12 @@ export type TradeDefinition = {
   resources: ResourceMap;
   value: number;
 };
+
+export type TradeDefinitionTuple = [ResourceCount, number];
+
+export type CacheEntry = {
+  value: number;
+  trades: number[];
+};
+
+export type Cached = Record<string, CacheEntry | undefined>;
