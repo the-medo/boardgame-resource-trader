@@ -1,0 +1,35 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main  # Set a branch to trigger deployment
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16
+
+      - name: Install pnpm and build 🔧
+        run: |
+          npm install -g pnpm # Install pnpm
+          pnpm install # Install dependencies
+          pnpm run build # Build project
+
+      - name: Install and Build 🔧
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages  # Deploy to GitHub Pages
+          folder: dist  # Assuming your build output is in a "dist" folder
