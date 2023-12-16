@@ -1,27 +1,32 @@
 import { Resource, ResourceArray, TradeDefinition } from './types';
 
+import resourceShell from '../public/assets/near-and-far/resource-shell.png';
+import resourceHammer from '../public/assets/near-and-far/resource-hammer.png';
+import resourceBottledDemon from '../public/assets/near-and-far/resource-bottled-demon.png';
+import resourceCrystal from '../public/assets/near-and-far/resource-crystal.png';
+
 const RESOURCE_SHELL: Resource = {
   id: 'shell',
   name: 'Shell',
-  imgUrl: '/src/assets/near-and-far/resource-shell.png',
+  imgUrl: resourceShell,
 };
 
 const RESOURCE_BOTTLED_DEMON: Resource = {
   id: 'bottled-demon',
   name: 'Bottled demon',
-  imgUrl: '/src/assets/near-and-far/resource-bottled-demon.png',
+  imgUrl: resourceBottledDemon,
 };
 
 const RESOURCE_HAMMER: Resource = {
   id: 'hammer',
   name: 'Hammer',
-  imgUrl: '/src/assets/near-and-far/resource-hammer.png',
+  imgUrl: resourceHammer,
 };
 
 const RESOURCE_CRYSTAL: Resource = {
   id: 'crystal',
   name: 'Crystal',
-  imgUrl: '/src/assets/near-and-far/resource-crystal.png',
+  imgUrl: resourceCrystal,
 };
 
 export const NEAR_AND_FAR_RESOURCES: ResourceArray = [

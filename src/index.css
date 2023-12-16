@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  background: rgb(17, 24, 39) url('/src/assets/near-and-far.jpg') no-repeat center top fixed;
+  background: rgb(17, 24, 39) url('./public/assets/near-and-far.jpg') no-repeat center top fixed;
   background-size: cover;
 }
 
