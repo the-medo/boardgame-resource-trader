@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js';
 import TradeDisplay from './TradeDisplay';
-import { useStore } from '../../utils/store';
+import { useStore } from '../../store/store';
 
 const TradeDisplayPanel: Component = () => {
   const { store } = useStore();

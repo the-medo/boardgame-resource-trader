@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js';
 import { TradeDefinition } from '../../utils/types';
-import { useStore } from '../../utils/store';
+import { useStore } from '../../store/store';
 
 interface TradeDisplayProps {
   definition: TradeDefinition;

@@ -6,7 +6,7 @@ import {
   TradeDefinition,
   TradeDefinitionTuple,
 } from './types';
-import { globalCache } from './store';
+import { globalCache } from '../store/store';
 
 export const transformTradeDefinitionToResourceCount = (
   def: TradeDefinition,
@@ -14,6 +14,18 @@ export const transformTradeDefinitionToResourceCount = (
 ): TradeDefinitionTuple => [resources.map((r) => def.resources[r.id] ?? 0), def.value];
 
 export const keyResourceCount = (rc: ResourceCount): string => rc.join(';');
+
+export const handleMinMax = (value: string | number, min: number, max: number): number => {
+  let result = typeof value === 'string' ? (value === '' ? 0 : parseInt(value)) : value;
+
+  if (result > max) {
+    result = max;
+  } else if (result < min) {
+    result = min;
+  }
+
+  return result;
+};
 
 export const startCompute = (
   availableResources: ResourceCount,
